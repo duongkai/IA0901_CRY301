@@ -5,10 +5,10 @@ import requests
 
 cc = 1
 i = 1
-uu = "https://shrouded-falls-79294.herokuapp.com/"
+url = "https://shrouded-falls-79294.herokuapp.com/"
 
 while cc == 1:
-	pp = requests.post(uu,data={'msg' : '\x00'*i})
+	pp = requests.post(url,data={'msg' : '\x00'*i})
 	if pp.status_code == 200:
 		i = i + 20
 		print i
@@ -20,7 +20,7 @@ while cc == 1:
 
 for j in range (i-20,i):
 	while cc == 0:
-		pp = requests.post(uu,data={'msg' : '\x00'*j})
+		pp = requests.post(url,data={'msg' : '\x00'*j})
 		if pp.status_code == 200:
 			j = j + 1
 			print j
@@ -32,16 +32,15 @@ for j in range (i-20,i):
 			break
 
 
-pp1 = requests.post(uu,data={'msg' : '\x00'*i})
+pp1 = requests.post(url,data={'msg' : '\x00'*i})
 tt1 = pp1.text
 
-pp2 = requests.post(uu,data={'msg' : '\x00'*i})
+pp2 = requests.post(url,data={'msg' : '\x00'*i})
 tt2 = pp2.text
 
 ss1 = tt1.split()
 ss2 = tt2.split()
 
-hh = 0
 ff=''
 tt=''
 for v in range (0,len(ss2)):
@@ -50,12 +49,11 @@ for v in range (0,len(ss2)):
 for k in range(0, i):
 	if ss1[k] == ss2[k]:
 		ff += uu(ss1[k])
-		hh = hh + 1 
 		k = k + 1
 	else:
 		ff=''
 		k = k + 1
-print tt		
+		
 print ff
 	
 
